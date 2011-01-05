@@ -1,0 +1,26 @@
+Description: Add WebSec to robots list.
+Author: Sergey B Kirpichev <skirpichev@gmail.com>
+Bug-Debian: http://bugs.debian.org/284149
+
+--- a/wwwroot/cgi-bin/lib/browsers.pm
++++ b/wwwroot/cgi-bin/lib/browsers.pm
+@@ -242,7 +242,8 @@
+ 'POE\-Component\-Client\-HTTP',
+ 'mozilla',				# Must be at end because a lot of browsers contains mozilla in string
+ 'libwww',				# Must be at end because some browser have both 'browser id' and 'libwww'
+-'lwp'
++'lwp',
++'WebSec'
+ );
+ 
+ # BrowsersHashIDLib
+@@ -468,7 +469,8 @@
+ 'POE\-Component\-Client\-HTTP','HTTP user-agent for POE (portable networking framework for Perl)',
+ 'mozilla','Mozilla',
+ 'libwww','LibWWW',
+-'lwp','LibWWW-perl'
++'lwp','LibWWW-perl',
++'WebSec', '<a href="http://baruch.ev-en.org/proj/websec/" title="Browser home page [new window]" target="_blank">Web Secretary</a>'
+ );
+ 
+ 

@@ -1,0 +1,115 @@
+#!/usr/bin/make -f
+# -*- mode: makefile; coding: utf-8 -*-
+# Copyright © 2003-2010 Jonas Smedegaard <dr@jones.dk>
+# Description: Main Debian packaging script for AWStats
+#
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU General Public License as
+# published by the Free Software Foundation; either version 2, or (at
+# your option) any later version.
+#
+# This program is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+# General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+include /usr/share/cdbs/1/rules/upstream-tarball.mk
+include /usr/share/cdbs/1/rules/utils.mk
+include /usr/share/cdbs/1/class/ant.mk
+include /usr/share/cdbs/1/rules/debhelper.mk
+
+DEB_UPSTREAM_URL = http://prdownloads.sourceforge.net/awstats
+DEB_UPSTREAM_TARBALL_BASENAME_MANGLE = s/(-6\.9)\.(\d)/$$1$$2/
+DEB_UPSTREAM_TARBALL_MD5 = 26a5b19fa9f395e9e7dafed37b795d7f
+
+DEB_UPSTREAM_REPACKAGE_EXCLUDE = wwwroot/icon/browser/firefox.png
+
+DEB_INSTALL_CHANGELOGS_ALL = docs/awstats_changelog.txt
+DEB_INSTALL_DOCS_ALL = README.TXT
+
+awstats_example_scripts = $(filter-out %/logresolvemerge.pl %/awstats_buildstaticpages.pl,$(wildcard tools/*.pl)) $(wildcard debian/examples/*.sh)
+
+DEB_INSTALL_EXAMPLES_awstats = $(awstats_example_scripts) debian/examples/apache.conf wwwroot/cgi-bin/awstats.model.conf wwwroot/cgi-bin/plugins/example/* wwwroot/css wwwroot/js tools/xslt
+DEB_COMPRESS_EXCLUDE = $(notdir $(awstats_example_scripts)) awstats.ico
+
+JAVA_HOME = /usr/lib/jvm/default-java
+DEB_ANT_BUILDFILE = debian/build.xml
+DEB_ANT_BUILD_TARGET = bin-jar
+DEB_ANT_ARGS = -Dpackage=awgraphapplet -Dversion=$(DEB_NOEPOCH_VERSION)
+
+prepare: cleanup
+	dh_testdir
+	tar xzf ../awstats_7.0.orig.tar.gz -C ..
+
+cleanup: clean
+	dh_testdir
+	rm -f debian/patches/.dpkg-source-applied
+	ls -A | grep --invert-match "^debian" | grep --invert-match "^.svn" | xargs rm -rf
+	dh_clean
+
+
+# "Binarize" (and cleanup) Debian-shipped non-trademarked Firefox icon
+pre-build::
+	uudecode -o debian/icons/firefox.png debian/icons/firefox.png.uu
+clean::
+	rm -f debian/icons/firefox.png
+
+# Adjust for Debian (and cleanup) main config file
+common-configure-indep::
+	# Use perl rather than a diff here, to make sure all relevant
+	# options are checked (upstream defaults have moved around in
+	# the past)
+# Perl in shell in make requires extra care:
+#  * Single-quoting ('...') protects against shell expansion
+#  * Double-dollar ($$) expands to plain dollar ($) in make
+	perl -wp \
+		-e 's,^(LogFile\s*=\s*).*,$$1"/var/log/apache2/access.log",;' \
+		-e 's,^(DirData\s*=\s*).*,$$1"/var/lib/awstats",;' \
+		-e 's,^(LogFormat\s*=\s*).*,$${1}4,;' \
+		-e 's,^(DNSLookup\s*=\s*).*,$${1}1,;' \
+		-e 's,^(DirIcons\s*=\s*).*,$$1"/awstats-icon",;' \
+		-e 's,^(HostAliases\s*=\s*).*,$$1"localhost 127.0.0.1",;' \
+		-e 's,^(DirLang\s*=\s*).*,$$1"/usr/share/awstats/lang",;' \
+		-e 's,^#(LoadPlugin\s*=\s*"hashfiles"),$$1,;' \
+		-e 's,^#(Include\s*)"",$$1"/etc/awstats/awstats.conf.local",;' \
+		-e 's,^(#LoadPlugin\s*=\s*"geoip\s*GEOIP_STANDARD\s*).*,$$1/usr/share/GeoIP/GeoIP.dat",;' \
+		-e 's,^(#LoadPlugin\s*=\s*"geoip_region_maxmind\s*GEOIP_STANDARD\s*).*,$$1/usr/share/GeoIP/GeoIPRegion.dat",;' \
+		-e 's,^(#LoadPlugin\s*=\s*"geoip_city_maxmind\s*GEOIP_STANDARD\s*).*,$$1/usr/share/GeoIP/GeoIPCity.dat",;' \
+		-e 's,^(#LoadPlugin\s*=\s*"geoip_isp_maxmind\s*GEOIP_STANDARD\s*).*,$$1/usr/share/GeoIP/GeoIPISP.dat",;' \
+		-e 's,^(#LoadPlugin\s*=\s*"geoip_org_maxmind\s*GEOIP_STANDARD\s*).*,$$1/usr/share/GeoIP/GeoIPOrg.dat",;' \
+		< wwwroot/cgi-bin/awstats.model.conf > debian/awstats.conf
+clean::
+	rm -f debian/awstats.conf
+
+# Install (and cleanup) java applet
+# TODO: use DEB_DH_INSTALL_ARGS_awstats when some day implemented in CDBS
+DEB_DH_LINK_awstats = usr/share/java/awstats/awgraphapplet$(DEB_NOEPOCH_VERSION).jar usr/share/java/awstats/awgraphapplet.jar
+binary-install/awstats:: DEB_DH_INSTALL_ARGS = wwwroot/classes/awgraphapplet$(DEB_NOEPOCH_VERSION).jar usr/share/java/awstats/
+clean::
+	rm -f wwwroot/classes/awgraphapplet?*.jar
+
+# Remove badly coded PDF and superfluous GPL license texts
+binary-post-install/awstats::
+	find $(DEB_DESTDIR) -type f \
+		\( -name '*.pdf' -o -name COPYING.TXT -o -name LICENSE.TXT \) \
+		-exec rm '{}' +
+
+# Set scripts executable - and unset other files
+binary-fixup/awstats::
+	find $(DEB_DESTDIR)/usr/share/awstats -type f  -exec chmod -x '{}' +
+	find $(DEB_DESTDIR)/usr/share/awstats/tools $(DEB_DESTDIR)/usr/share/doc/awstats/examples \
+		\( -name '*.pl' -o -name '*.sh' \) -exec chmod +x '{}' +
+
+# Needed (often/sometimes) at runtime
+# * Recent coreutils needed for cron scripts (doing mktemp --tmpdir)
+CDBS_RECOMMENDS := libnet-xwhois-perl, coreutils (>= 7.4)
+CDBS_SUGGESTS := apache2 | httpd, libnet-dns-perl, libnet-ip-perl, libgeo-ipfree-perl, liburi-perl
+
+# Needed by upstream build process
+CDBS_BUILD_DEPENDS += , ant, default-jdk
+
+# Needed for our packaging
+CDBS_BUILD_DEPENDS += , sharutils

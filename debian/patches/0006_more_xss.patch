@@ -1,0 +1,14 @@
+Description: CVS fix for upstream XSS bug.
+Author: Florian Weimer <fw@deneb.enyo.de>
+Bug-Debian: http://bugs.debian.org/495432
+
+--- a/wwwroot/cgi-bin/awstats.pl
++++ b/wwwroot/cgi-bin/awstats.pl
+@@ -7694,6 +7694,7 @@
+ sub DecodeEncodedString {
+ 	my $stringtodecode = shift;
+ 	$stringtodecode =~ tr/\+/ /s;
++	$stringtodecode =~ s/%22//g;
+ 	$stringtodecode =~ s/%([A-F0-9][A-F0-9])/pack("C", hex($1))/ieg;
+ 	$stringtodecode =~ s/["']//g;
+ 

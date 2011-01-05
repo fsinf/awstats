@@ -1,0 +1,15 @@
+Description: Recognize method/protocol RTSP in uppercase
+Author: Lee Maguire <lee-debian@hexkey.co.uk>
+Bug-Debian: http://bugs.debian.org/350601
+
+--- a/wwwroot/cgi-bin/awstats.pl
++++ b/wwwroot/cgi-bin/awstats.pl
+@@ -10879,7 +10879,7 @@
+ 			( $LogType eq 'W' || $LogType eq 'S' )
+ 			&& (   $field[$pos_method] eq 'GET'
+ 				|| $field[$pos_method] eq 'mms'
+-				|| $field[$pos_method] eq 'rtsp'
++				|| lc($field[$pos_method]) eq 'rtsp'
+ 				|| $field[$pos_method] eq 'http'
+ 				|| $field[$pos_method] eq 'RTP' )
+ 		  )

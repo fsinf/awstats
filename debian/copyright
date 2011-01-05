@@ -1,0 +1,43 @@
+Format-Specification: http://svn.debian.org/wsvn/dep/web/deps/dep5.mdwn?rev=135
+Name: AWStats
+Maintainer: Mathias Ertl <mati@fsinf.at>
+Source: http://awstats.sourceforge.net
+
+Copyright: 2011, Mathias Ertl <mati@fsinf.at>
+License: GPL-2
+ This program is free software; you can redistribute it and/or
+ modify it under the terms of the GNU General Public License
+ version 2 as published by the Free Software Foundation.
+ .
+ On Debian GNU/Linux systems, the complete text of the GNU General
+ Public License (GPL) version 2 can be found at
+ /usr/share/common-licenses/GPL-2.
+
+Files: ./wwwroot/icon/mime/archive.png,
+	./wwwroot/icon/mime/html.png,
+	./wwwroot/icon/mime/text.png
+Copyright: 1995, Kevin Hughes <kevinh@eit.com>
+License: other-PD
+ This art is in the public domain.
+
+Files: ./wwwroot/cgi-bin/plugins/export_to_csv.pm
+Copyright: 2005, Pim Snel
+License: GPL
+ This AWStats plugin is a free software distributed under the GNU General
+ Public License.
+ .
+ On Debian GNU/Linux systems, the complete text of a recent version of
+ the GNU General Public License (GPL) can be found at
+ /usr/share/common-licenses/GPL.
+
+Files: ./debian/*
+Copyright: © 2003-2009, Jonas Smedegaard <dr@jones.dk>
+License: GPL-2+
+ This program is free software; you can redistribute it and/or
+ modify it under the terms of the GNU General Public License as
+ published by the Free Software Foundation; either version 2, or (at
+ your option) any later version.
+ .
+ On Debian GNU/Linux systems, the complete text of the GNU General
+ Public License (GPL) version 2 can be found at
+ /usr/share/common-licenses/GPL-2.
