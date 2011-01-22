@@ -1,16 +1,10 @@
 #0006_more_xss.patch
 0007_russian_lang.patch
-0008_nested_includes.patch
-0009_CVE-2010-4369.patch
-1002_disable_configdir.patch
 1003_redirect_to_STDERR.patch
 1004_perl_version.patch
-1008_extrasections_with_top.patch
 1009_hurd_url.patch
 1010_dirdata_permissions.patch
 1012_ipv6_strip_trailing_dot.patch
 1013_yahoo_search.patch
 1014_websec_robot.patch
-1015_ignore_case_for_rtsp.patch
-1016_report_permissions_problem_for_configs.patch
 2001_awstatsprog_path.patch

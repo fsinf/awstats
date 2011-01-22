@@ -3,7 +3,7 @@ Section: web
 Priority: optional
 Maintainer: Mathias Ertl <apt-repository@fsinf.at>
 Uploaders: Jonas Smedegaard <dr@jones.dk>, Sergey B Kirpichev <skirpichev@gmail.com>
-Build-Depends: cdbs (>= 0.4.70~),
+Build-Depends: cdbs (>= 0.4.51~),
  devscripts (>= 2.10.7~),
  debhelper (>= 6),
  dh-buildinfo,
@@ -12,7 +12,7 @@ Build-Depends: cdbs (>= 0.4.70~),
  sharutils
 Vcs-Git: git://git.debian.org/git/collab-maint/awstats.git
 Vcs-Browser: http://git.debian.org/?p=collab-maint/awstats.git;a=summary
-Standards-Version: 3.9.1
+Standards-Version: 3.8.4
 Homepage: http://awstats.sourceforge.net/
 
 Package: awstats

@@ -1,9 +1,16 @@
-awstats (7.0-1) unstable; urgency=high
+awstats (7.0-1) maverick; urgency=high
 
   * This is a new maintainer upload
   * bump from upstream
+  * removed patches applied upstream:
+    * 0008_nested_includes.patch
+    * 0009_CVE-2010-4369.patch
+    * 1002_disable_configdir.patch
+    * 1008_extrasections_with_top.patch
+    * 1015_ignore_case_for_rtsp.patch
+    * 1016_report_permissions_problem_for_configs.patch
 
- -- Mathias Ertl <apt-repository@fsinf.at>  __DATE__
+ -- Mathias Ertl <apt-repository@fsinf.at>  Wed, 05 Jan 2011 20:15:15 +0100
 
 awstats (6.9.5~dfsg-5) unstable; urgency=high
 
