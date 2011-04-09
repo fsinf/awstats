@@ -16,7 +16,6 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-#include /usr/share/cdbs/1/rules/upstream-tarball.mk
 include /usr/share/cdbs/1/rules/utils.mk
 include /usr/share/cdbs/1/class/ant.mk
 include /usr/share/cdbs/1/rules/debhelper.mk
@@ -40,9 +39,14 @@ DEB_ANT_BUILDFILE = debian/build.xml
 DEB_ANT_BUILD_TARGET = bin-jar
 DEB_ANT_ARGS = -Dpackage=awgraphapplet -Dversion=$(DEB_NOEPOCH_VERSION)
 
-prepare: cleanup
+ORIG_SOURCE=../${DEB_SOURCE_PACKAGE}_${DEB_UPSTREAM_VERSION}.orig.tar.gz
+get-orig-source: ${ORIG_SOURCE}
+${ORIG_SOURCE}:
+	wget http://prdownloads.sourceforge.net/awstats/awstats-7.0.tar.gz -O ${ORIG_SOURCE}
+
+prepare: get-orig-source cleanup
 	dh_testdir
-	tar xzf ../awstats_7.0.orig.tar.gz -C ..
+	tar xzf ${ORIG_SOURCE} -C ..
 
 cleanup: clean
 	dh_testdir
