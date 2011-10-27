@@ -51,7 +51,7 @@ prepare: get-orig-source cleanup
 cleanup: clean
 	dh_testdir
 	rm -f debian/patches/.dpkg-source-applied
-	ls -A | grep --invert-match "^debian" | grep --invert-match "^.svn" | xargs rm -rf
+	ls -A | grep --invert-match "^debian" | xargs rm -rf
 	dh_clean
 
 
