@@ -10,8 +10,8 @@ Build-Depends: cdbs (>= 0.4.51~),
  ant,
  default-jdk,
  sharutils
-Vcs-Git: git://git.debian.org/git/collab-maint/awstats.git
-Vcs-Browser: http://git.debian.org/?p=collab-maint/awstats.git;a=summary
+Vcs-Git: https://git.fsinf.at/apt/awstats
+Vcs-Browser: https://git.fsinf.at/apt/awstats.git
 Standards-Version: 3.8.4
 Homepage: http://awstats.sourceforge.net/
 
