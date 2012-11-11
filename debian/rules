@@ -44,17 +44,6 @@ get-orig-source: ${ORIG_SOURCE}
 ${ORIG_SOURCE}:
 	wget http://prdownloads.sourceforge.net/awstats/awstats-7.0.tar.gz -O ${ORIG_SOURCE}
 
-prepare: get-orig-source cleanup
-	dh_testdir
-	tar xzf ${ORIG_SOURCE} -C ..
-
-cleanup: clean
-	dh_testdir
-	rm -f debian/patches/.dpkg-source-applied
-	ls -A | grep --invert-match "^debian" | xargs rm -rf
-	dh_clean
-
-
 # "Binarize" (and cleanup) Debian-shipped non-trademarked Firefox icon
 pre-build::
 	uudecode -o debian/icons/firefox.png debian/icons/firefox.png.uu
