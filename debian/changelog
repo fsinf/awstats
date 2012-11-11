@@ -1,3 +1,10 @@
+awstats (7.0-2) natty; urgency=high
+
+  * move package to git-buildpackage
+  * update VCS-fields
+
+ -- Mathias Ertl <apt-repository@fsinf.at>  Sun, 11 Nov 2012 15:12:38 +0100
+
 awstats (7.0-1) maverick; urgency=high
 
   * This is a new maintainer upload
