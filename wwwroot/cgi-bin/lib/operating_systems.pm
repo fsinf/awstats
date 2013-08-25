@@ -3,7 +3,7 @@
 # If you want to add an OS to extend AWStats database detection capabilities,
 # you must add an entry in OSSearchIDOrder, in OSHashID and in OSHashLib.
 #-------------------------------------------------------
-# $Revision: 1.31 $ - $Author: eldy $ - $Date: 2010/08/04 10:55:08 $
+# $Revision: 1.33 $ - $Author: eldy $ - $Date: 2012/12/29 15:27:22 $
 
 # 2005-08-19 Sean Carlos http://www.antezeta.com/awstats.html
 #              - added specific Linux distributions in addition to 
@@ -31,6 +31,7 @@
 # Windows OS family
 'windows[_+ ]?2005', 'windows[_+ ]nt[_+ ]6\.0',
 'windows[_+ ]?2008', 'windows[_+ ]nt[_+ ]6\.1', # Must be before windows_nt_6
+'windows[_+ ]?2012', 'windows[_+ ]nt[_+ ]6\.2', # Must be before windows_nt_6
 'windows[_+ ]?vista', 'windows[_+ ]nt[_+ ]6',
 'windows[_+ ]?2003','windows[_+ ]nt[_+ ]5\.2',	# Must be before windows_nt_5
 'windows[_+ ]xp','windows[_+ ]nt[_+ ]5\.1',		# Must be before windows_nt_5
@@ -42,6 +43,12 @@
 'win(.*)16','windows[_+ ]3',					# This works for windows_31 and windows_3.1
 'win(.*)ce',
 # Macintosh OS family
+'mac[_+ ]os[_+ ]x[_+ ]10[_\.]9',
+'mac[_+ ]os[_+ ]x[_+ ]10[_\.]8',
+'mac[_+ ]os[_+ ]x[_+ ]10[_\.]7',
+'mac[_+ ]os[_+ ]x[_+ ]10[_\.]6',
+'mac[_+ ]os[_+ ]x[_+ ]10[_\.]5',
+'mac[_+ ]os[_+ ]x[_+ ]10[_\.]4',
 'mac[_+ ]os[_+ ]x',
 'mac[_+ ]?p',									# This works for macppc and mac_ppc and mac_powerpc
 'mac[_+ ]68',									# This works for mac_6800 and mac_68k
@@ -129,6 +136,7 @@
 # Windows OS family
 'windows[_+ ]?2005','winlong','windows[_+ ]nt[_+ ]6\.0','winlong',
 'windows[_+ ]?2008','win2008','windows[_+ ]nt[_+ ]6\.1','win7',
+'windows[_+ ]?2012','win2012','windows[_+ ]nt[_+ ]6\.2','win8',
 'windows[_+ ]?vista','winvista','windows[_+ ]nt[_+ ]6','winvista',
 'windows[_+ ]?2003','win2003','windows[_+ ]nt[_+ ]5\.2','win2003',
 'windows[_+ ]xp','winxp','windows[_+ ]nt[_+ ]5\.1','winxp', 'syndirella', 'winxp',
@@ -143,6 +151,12 @@
 'msie[_+ ]','winunknown',
 'ms[_+ ]frontpage','winunknown',
 # Macintosh OS family
+'mac[_+ ]os[_+ ]x[_+ ]10[_\.]9','macosx9',
+'mac[_+ ]os[_+ ]x[_+ ]10[_\.]8','macosx8',
+'mac[_+ ]os[_+ ]x[_+ ]10[_\.]7','macosx7',
+'mac[_+ ]os[_+ ]x[_+ ]10[_\.]6','macosx6',
+'mac[_+ ]os[_+ ]x[_+ ]10[_\.]5','macosx5',
+'mac[_+ ]os[_+ ]x[_+ ]10[_\.]4','macosx4',
 'mac[_+ ]os[_+ ]x','macosx', 'vienna', 'macosx', 'newsfire', 'macosx', 'applesyndication', 'macosx',
 'mac[_+ ]?p','macintosh','mac[_+ ]68','macintosh','macweb','macintosh','macintosh','macintosh',
 # Linux family (linuxyyy)
@@ -215,9 +229,11 @@
 #-----------------------------------------------------------
 %OSHashLib      = (
 # Windows family OS
-'win7','<a href="http://www.microsoft.com/windows/" title="Windows 7 home page [new window]" target="_blank">Windows 7</a>',
+'win8','<a href="http://www.microsoft.com/windows/" title="Windows 8 home page [new window]" target="_blank">Windows 8</a>',
+'win7','<a href="http://windows.microsoft.com/en-US/windows7/products/home/" title="Windows 7 home page [new window]" target="_blank">Windows 7</a>',
 'winlong','<a href="http://www.microsoft.com/windows/" title="Windows Vista home page [new window]" target="_blank">Windows Vista (LongHorn)</a>',
 'win2008','<a href="http://www.microsoft.com/windowsserver2008/" title="Windows 2008 home page [new window]" target="_blank">Windows 2008</a>',
+'win2012','<a href="http://www.microsoft.com/en-us/server-cloud/windows-server/2012-default.aspx/" title="Windows Server 2012 home page [new window]" target="_blank">Windows Server 2012</a>',
 'winvista','<a href="http://www.microsoft.com/windowsvista/" title="Windows Vista home page [new window]" target="_blank">Windows Vista</a>',
 'win2003','<a href="http://www.microsoft.com/windowsserver2003/" title="Windows 2003 home page [new window]" target="_blank">Windows 2003</a>',
 'winxp','<a href="http://www.microsoft.com/windowsxp/" title="Windows XP home page [new window]" target="_blank">Windows XP</a>',
@@ -231,7 +247,13 @@
 'winunknown','Windows (unknown version)',
 'winxbox','<a href="http://www.xbox.com/" title="Microsoft XBOX home page [new window]" target="_blank">Microsoft XBOX</a>',
 # Macintosh OS
-'macosx','<a href="http://www.apple.com/macosx/" title="Mac OS X home page [new window]" target="_blank">Mac OS X</a>',
+'macosx9','<a href="http://www.apple.com/macosx/" title="Mac OS X home page [new window]" target="_blank">Mac OS X 10.9</a>',
+'macosx8','<a href="http://www.apple.com/macosx/" title="Mac OS X home page [new window]" target="_blank">Mac OS X 10.8 Mountain Lion</a>',
+'macosx7','<a href="http://www.apple.com/macosx/" title="Mac OS X home page [new window]" target="_blank">Mac OS X 10.7 Lion</a>',
+'macosx6','<a href="http://www.apple.com/macosx/" title="Mac OS X home page [new window]" target="_blank">Mac OS X 10.6 Snow Leopard</a>',
+'macosx5','<a href="http://www.apple.com/macosx/" title="Mac OS X home page [new window]" target="_blank">Mac OS X 10.5 Leopard</a>',
+'macosx4','<a href="http://www.apple.com/macosx/" title="Mac OS X home page [new window]" target="_blank">Mac OS X 10.4 Tiger</a>',
+'macosx','<a href="http://www.apple.com/macosx/" title="Mac OS X home page [new window]" target="_blank">Mac OS X others</a>',
 'macintosh','<a href="http://www.apple.com/" title="Mac OS home page [new window]" target="_blank">Mac OS</a>',
 # Linux
 'linuxandroid','<a href="http://code.google.com/android/" title="Google Android home page [new window]" target="_blank">Google Android</a>',
@@ -253,7 +275,7 @@
 'linux','<a href="http://www.distrowatch.com/" title="Linux DistroWatch home page. Useful if you find the associated user agent string in your logs. [new window]" target="_blank">Linux (Unknown/unspecified)</a>',
 'linux','GNU Linux (Unknown or unspecified distribution)',
 # Hurd
-'gnu','<a href="www.gnu.org/software/hurd/hurd.html" title="GNU Hurd home page [new window]" target="_blank">GNU Hurd</a>',
+'gnu','<a href="http://www.gnu.org/software/hurd/hurd.html" title="GNU Hurd home page [new window]" target="_blank">GNU Hurd</a>',
 # BSDs
 'bsdi','<a href="http://en.wikipedia.org/wiki/BSDi" title="BSDi home page [new window]" target="_blank">BSDi</a>',
 'bsdkfreebsd','<a href="http://www.debian.org/ports/kfreebsd-gnu/" title="Debian GNU/kFreeBSD" target="_blank">GNU/kFreeBSD</a>',

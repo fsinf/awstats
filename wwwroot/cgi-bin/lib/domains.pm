@@ -3,7 +3,7 @@
 # If you want to add a new domain to extend AWStats database detection capabilities,
 # you must add an entry in DomainsHashIDLib.
 #-------------------------------------------------------
-# $Revision: 1.14 $ - $Author: eldy $ - $Date: 2009/09/28 00:00:17 $
+# $Revision: 1.16 $ - $Author: eldy $ - $Date: 2013/05/02 07:30:52 $
 
 
 #package AWSDOM;
@@ -36,7 +36,7 @@
 'cf','Central African Republic','cg','Congo','ch','Switzerland',
 'ci','Ivory Coast (Cote D\'Ivoire)','ck','Cook Islands','cl','Chile','cm','Cameroon',
 'cn','China','co','Colombia','com','Commercial','coop','Coop domains','cr','Costa Rica',
-'cs','Former Czechoslovakia','cu','Cuba','cv','Cape Verde',
+'cs','Former Czechoslovakia','cu','Cuba','cv','Cape Verde','cw','Curacao',
 'cx','Christmas Island','cy','Cyprus','cz','Czech Republic','de','Germany',
 'dj','Djibouti','dk','Denmark','dm','Dominica','do','Dominican Republic',
 'dz','Algeria','ec','Ecuador','edu','USA Educational','ee','Estonia',
@@ -81,7 +81,9 @@
 'sd','Sudan','se','Sweden','sg','Singapore','sh','Saint Helena','si','Slovenia',
 'sj','Svalbard and Jan Mayen Islands','sk','Slovak Republic','sl','Sierra Leone',
 'sm','San Marino','sn','Senegal','so','Somalia','sr','Suriname',
-'st','Sao Tome and Principe','su','Former USSR','sv','El Salvador','sy','Syria','sz','Swaziland',
+'st','Sao Tome and Principe','su','Former USSR','sv','El Salvador',
+'sx','Sint Maarten',
+'sy','Syria','sz','Swaziland',
 'tc','Turks and Caicos Islands','td','Chad','tf','French Southern Territories','tg','Togo',
 'th','Thailand','tj','Tadjikistan','tk','Tokelau','tm','Turkmenistan','tn','Tunisia',
 'to','Tonga','tp','East Timor','tr','Turkey','tt','Trinidad and Tobago','tv','Tuvalu',

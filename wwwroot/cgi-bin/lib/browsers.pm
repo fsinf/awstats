@@ -3,7 +3,7 @@
 # If you want to add a Browser to extend AWStats database detection capabilities,
 # you must add an entry in BrowsersSearchIDOrder and in BrowsersHashIDLib.
 #-------------------------------------------------------
-# $Revision: 1.66 $ - $Author: manolamancha $ - $Date: 2010/05/17 12:35:58 $
+# $Revision: 1.68 $ - $Author: eldy $ - $Date: 2012/12/05 13:14:22 $
 
 # 2006-05-15 Sean Carlos http://www.antezeta.com/awstats.html 
 # 				akregator (rss)
@@ -21,7 +21,7 @@
 #				Potu Rss-Reader http://www.potu.com/
 #				OSSProxy http://www.marketscore.com/FAQ.Aspx
 
-		
+
 #package AWSUA;
 
 # Relocated from main file for easier editing
@@ -125,6 +125,8 @@
 'webvcr',
 'qnx\svoyager',
 # Site grabbers
+'cloudflare',
+'grabber',
 'teleport',
 'webcapture',
 'webcopier',
@@ -351,6 +353,8 @@
 'webvcr','WebVCR',
 'qnx\svoyager','QNX Voyager',
 # Site grabbers
+'cloudflare','CloudFlare',
+'grabber','Grabber',
 'teleport','TelePort Pro',
 'webcapture','Acrobat Webcapture',
 'webcopier', 'WebCopier',
@@ -488,6 +492,8 @@
 # browsers.
 #---------------------------------------------------------------------------
 %BrowsersHereAreGrabbers = (
+'cloudflare','1',
+'grabber','1',
 'teleport','1',
 'webcapture','1',
 'webcopier','1',
@@ -571,6 +577,7 @@
 'netpositive','netpositive',
 'phoenix','phoenix',
 # Site grabbers
+'grabber','grabber',
 'teleport','teleport',
 'webcapture','adobe',
 'webcopier','webcopier',
