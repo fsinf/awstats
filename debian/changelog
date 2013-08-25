@@ -1,3 +1,9 @@
+awstats (7.2-1) unstable; urgency=high
+
+  * New upstream version.
+
+ -- Mathias Ertl <apt-repository@fsinf.at>  Sun, 25 Aug 2013 13:37:42 +0200
+
 awstats (7.0-2) natty; urgency=high
 
   * move package to git-buildpackage
