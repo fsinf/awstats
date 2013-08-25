@@ -6,7 +6,7 @@
 #-----------------------------------------------------------------------------
 # Perl Required Modules: Geo::IP or Geo::IP::PurePerl
 #-----------------------------------------------------------------------------
-# $Revision: 1.18 $ - $Author: eldy $ - $Date: 2010/08/23 21:55:34 $
+# $Revision: 1.19 $ - $Author: eldy $ - $Date: 2012/10/15 18:12:44 $
 
 
 # <-----
@@ -64,7 +64,7 @@ sub Init_geoip_org_maxmind {
 	my $InitParams=shift;
 	my $checkversion=&Check_Plugin_Version($PluginNeedAWStatsVersion);
     $MAXNBOFSECTIONGIR=10;
-    $MAXLENGTH=20;
+    $MAXLENGTH=50;
     
 	# <-----
 	# ENTER HERE CODE TO DO INIT PLUGIN ACTIONS

@@ -3,7 +3,7 @@
 # If you want to add MIME types,
 # you must add an entry in MimeHashLib and assign it to a family
 #-------------------------------------------------------
-# $Revision: 1.27 $ - $Author: manolamancha $ - $Date: 2010/06/09 14:46:19 $
+# $Revision: 1.28 $ - $Author: eldy $ - $Date: 2011/12/30 18:23:09 $
 
 
 #package AWSMIME;
@@ -175,9 +175,9 @@
 'ogv',['video','d'],
 'ogx',['video','d'],
 'rm',['video','d'],
-'swf',['swf',''],
-'flv',['flv','d'],
-'f4v',['flv','d'],
+'swf',['flash',''],
+'flv',['flash','d'],
+'f4v',['flash','d'],
 'wmv',['video','d'],
 'wmf',['video','d'],
 'mov',['video','d'],
