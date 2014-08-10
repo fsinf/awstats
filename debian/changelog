@@ -1,3 +1,12 @@
+awstats (7.3-1) unstable; urgency=high
+
+  * Version bump from upstream.
+  * Use new maintainer address.
+  * This package is now hosted on github.
+  * Use debhelper >= 9 and newest standards version.
+
+ -- Mathias Ertl <mati@fsinf.at>  Sun, 10 Aug 2014 18:54:47 +0200
+
 awstats (7.2-1) unstable; urgency=high
 
   * New upstream version.

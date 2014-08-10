@@ -1,18 +1,18 @@
 Source: awstats
 Section: web
 Priority: optional
-Maintainer: Mathias Ertl <apt-repository@fsinf.at>
+Maintainer: Mathias Ertl <mati@fsinf.at>
 Uploaders: Jonas Smedegaard <dr@jones.dk>, Sergey B Kirpichev <skirpichev@gmail.com>
 Build-Depends: cdbs (>= 0.4.51~),
  devscripts (>= 2.10.7~),
- debhelper (>= 6),
+ debhelper (>= 9),
  dh-buildinfo,
  ant,
  default-jdk,
  sharutils
-Vcs-Git: https://git.fsinf.at/apt/awstats
-Vcs-Browser: https://git.fsinf.at/apt/awstats.git
-Standards-Version: 3.8.4
+Vcs-Git: https://github.com/fsinf/awstats.git
+Vcs-Browser: https://github.com/fsinf/awstats
+Standards-Version: 3.8.5
 Homepage: http://awstats.sourceforge.net/
 
 Package: awstats
