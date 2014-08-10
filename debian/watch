@@ -1,6 +1,5 @@
-# Run the "uscan --report" command to check for upstream updates.
-# (use get-orig-source build target to get source - see README.source)
 version=3
 # use qa.debian.org redirector; see man uscan
-opts=dversionmangle=s/.dfsg//,uversionmangle=s/6\.9(\d)/6.9.$1/ \
-  http://sf.net/awstats/awstats-(.*).tar.gz debian
+opts=dversionmangle=s/.dfsg//,uversionmangle=s/7\.(\d)/7.$1/ \
+  http://sf.net/awstats/awstats-(.*).tar.gz debian \
+  debian/orig-tar.sh

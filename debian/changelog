@@ -4,6 +4,7 @@ awstats (7.3-1) unstable; urgency=high
   * Use new maintainer address.
   * This package is now hosted on github.
   * Use debhelper >= 9 and newest standards version.
+  * Backport various changes from the awstats package currently in unstable.
 
  -- Mathias Ertl <mati@fsinf.at>  Sun, 10 Aug 2014 18:54:47 +0200
 
