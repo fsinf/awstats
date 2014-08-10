@@ -7,7 +7,7 @@ Author: Sergey B Kirpichev <skirpichev@gmail.com>
 
 --- a/tools/awstats_buildstaticpages.pl
 +++ b/tools/awstats_buildstaticpages.pl
-@@ -308,8 +308,8 @@
+@@ -307,8 +307,8 @@
  # Check if AWSTATS prog is found
  my $AwstatsFound=0;
  if (-s "$Awstats") { $AwstatsFound=1; }

@@ -8,7 +8,7 @@ Bug-Debian: http://bugs.debian.org/397544
 
 --- a/wwwroot/cgi-bin/plugins/ipv6.pm
 +++ b/wwwroot/cgi-bin/plugins/ipv6.pm
-@@ -64,6 +64,7 @@
+@@ -63,6 +63,7 @@
  	my $query = $resolver->query($reverseip, "PTR");
  	if (! defined($query)) { return; }
  	my @result=split(/\s/, ($query->answer)[0]->string);

@@ -9,7 +9,7 @@ Bug-Debian: http://bugs.debian.org/600225
 
 --- a/wwwroot/cgi-bin/awstats.pl
 +++ b/wwwroot/cgi-bin/awstats.pl
-@@ -16926,6 +16926,7 @@
+@@ -16929,6 +16929,7 @@
  	'showsteps',          'showdropped',
  	'showcorrupted',      'showunknownorigin',
  	'showdirectorigin',   'limitflush',
@@ -17,7 +17,7 @@ Bug-Debian: http://bugs.debian.org/600225
  	'confdir',            'updatefor',
  	'hostfilter',         'hostfilterex',
  	'urlfilter',          'urlfilterex',
-@@ -17141,6 +17142,7 @@
+@@ -17144,6 +17145,7 @@
  	foreach ( split( /,/, $2 ) ) { $NoLoadPlugin{ &Sanitize( "$_", 1 ) } = 1; }
  }
  if ( $QueryString =~ /(^|&|&amp;)limitflush=(\d+)/i ) { $LIMITFLUSH = $2; }

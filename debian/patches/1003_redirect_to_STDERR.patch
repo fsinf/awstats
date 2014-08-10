@@ -13,7 +13,7 @@ Bug-Debian: http://bugs.debian.org/296435
 
 --- a/tools/awstats_buildstaticpages.pl
 +++ b/tools/awstats_buildstaticpages.pl
-@@ -80,7 +80,7 @@
+@@ -79,7 +79,7 @@
  # Return:		None
  #------------------------------------------------------------------------------
  sub error {
@@ -22,7 +22,7 @@ Bug-Debian: http://bugs.debian.org/296435
      exit 1;
  }
  
-@@ -100,7 +100,7 @@
+@@ -99,7 +99,7 @@
  #    		print "$messagestring<br />\n";
  #    	}
  #    	else {
@@ -33,7 +33,7 @@ Bug-Debian: http://bugs.debian.org/296435
  }
 --- a/tools/awstats_configure.pl
 +++ b/tools/awstats_configure.pl
-@@ -88,7 +88,7 @@
+@@ -87,7 +87,7 @@
  # error
  #-------------------------------------------------------
  sub error {
@@ -44,7 +44,7 @@ Bug-Debian: http://bugs.debian.org/296435
  
 --- a/tools/awstats_exportlib.pl
 +++ b/tools/awstats_exportlib.pl
-@@ -93,8 +93,8 @@
+@@ -92,8 +92,8 @@
  	my $thirdmessage=shift||"";
  	my $donotshowsetupinfo=shift||0;
  	if ($Debug) { debug("$message $secondmessage $thirdmessage",1); }
@@ -57,7 +57,7 @@ Bug-Debian: http://bugs.debian.org/296435
  
 --- a/tools/awstats_updateall.pl
 +++ b/tools/awstats_updateall.pl
-@@ -37,7 +37,7 @@
+@@ -36,7 +36,7 @@
  # Return:		None
  #------------------------------------------------------------------------------
  sub error {
@@ -68,7 +68,7 @@ Bug-Debian: http://bugs.debian.org/296435
  
 --- a/tools/logresolvemerge.pl
 +++ b/tools/logresolvemerge.pl
-@@ -131,7 +131,7 @@
+@@ -130,7 +130,7 @@
  # Return:		None
  #------------------------------------------------------------------------------
  sub error {
@@ -77,7 +77,7 @@ Bug-Debian: http://bugs.debian.org/296435
      exit 1;
  }
  
-@@ -160,7 +160,7 @@
+@@ -159,7 +159,7 @@
  sub warning {
  	my $messagestring=shift;
  	if ($Debug) { debug("$messagestring",1); }

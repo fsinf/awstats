@@ -8,7 +8,7 @@ Bug: http://sourceforge.net/tracker/index.php?func=detail&aid=1844793&group_id=1
 
 --- a/wwwroot/cgi-bin/awstats.pl
 +++ b/wwwroot/cgi-bin/awstats.pl
-@@ -11651,7 +11651,7 @@
+@@ -11654,7 +11654,7 @@
  			if ($Debug) { debug( "ExtraName$extranum", 2 ); }
  			print "$Center<a name=\"extra$extranum\">&nbsp;</a><br />";
  			my $title = $ExtraName[$extranum];
@@ -17,7 +17,7 @@ Bug: http://sourceforge.net/tracker/index.php?func=detail&aid=1844793&group_id=1
  			print "<tr bgcolor=\"#$color_TableBGRowTitle\">";
  			print "<th>" . $ExtraFirstColumnTitle[$extranum] . "</th>";
  
-@@ -16687,7 +16687,7 @@
+@@ -16690,7 +16690,7 @@
  	if ($Debug) { debug( "ExtraName$extranum", 2 ); }
  	print "$Center<a name=\"extra$extranum\">&nbsp;</a><br />";
  	my $title = $ExtraName[$extranum];

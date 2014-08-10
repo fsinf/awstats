@@ -8,8 +8,8 @@ Bug-Debian: http://bugs.debian.org/347426
 
 --- a/wwwroot/cgi-bin/lib/search_engines.pm
 +++ b/wwwroot/cgi-bin/lib/search_engines.pm
-@@ -437,7 +437,7 @@
- 'google\.'=>'translate\.google\.',
+@@ -475,7 +475,7 @@
+ 'google\.'=>'code\.google\.',
  'msn\.'=>'hotmail\.msn\.',
  'tiscali\.'=>'mail\.tiscali\.',
 -'yahoo\.'=>'mail\.yahoo\.',

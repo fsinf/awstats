@@ -8,7 +8,7 @@ Forwarded: not-needed
 
 --- a/wwwroot/cgi-bin/awstats.model.conf
 +++ b/wwwroot/cgi-bin/awstats.model.conf
-@@ -48,7 +48,7 @@
+@@ -47,7 +47,7 @@
  # If there are several log files from load balancing servers :
  # Example: "/pathtotools/logresolvemerge.pl *.log |"
  #
@@ -17,7 +17,7 @@ Forwarded: not-needed
  
  
  # Enter the log file type you want to analyze.
-@@ -120,7 +120,7 @@
+@@ -119,7 +119,7 @@
  # Example for IIS:
  # LogFormat = 2
  #
@@ -26,7 +26,7 @@ Forwarded: not-needed
  
  
  # If your log field's separator is not a space, you can change this parameter.
-@@ -166,7 +166,7 @@
+@@ -165,7 +165,7 @@
  # Note: You can also use @/mypath/myfile if list of aliases are in a file.
  # Example: "www.myserver.com localhost 127.0.0.1 REGEX[mydomain\.(net|org)$]"
  #
@@ -35,7 +35,7 @@ Forwarded: not-needed
  
  
  # If you want to have hosts reported by name instead of ip address, AWStats
-@@ -186,7 +186,7 @@
+@@ -185,7 +185,7 @@
  # 2 - DNS Lookup is made only from static DNS cache file (if it exists)
  # Default: 2
  # 
@@ -44,7 +44,7 @@ Forwarded: not-needed
  
  
  # When AWStats updates its statistics, it stores results of its analysis in 
-@@ -201,7 +201,7 @@
+@@ -200,7 +200,7 @@
  # Example: "C:/awstats_data_dir"
  # Default: "."          (means same directory as awstats.pl)
  #
@@ -53,7 +53,7 @@ Forwarded: not-needed
  
  
  # Relative or absolute web URL of your awstats cgi-bin directory.
-@@ -220,7 +220,7 @@
+@@ -219,7 +219,7 @@
  # Example: "../icon"
  # Default: "/icon" (means you must copy icon directories in "/mywwwroot/icon")
  #
@@ -62,7 +62,7 @@ Forwarded: not-needed
  
  
  # When this parameter is set to 1, AWStats adds a button on report page to
-@@ -917,7 +917,7 @@
+@@ -916,7 +916,7 @@
  # Example: "/usr/share/awstats/lang"
  # Default: "./lang" (means lang directory is in same location than awstats.pl)
  #
@@ -71,7 +71,7 @@ Forwarded: not-needed
  
  
  # Show menu header with reports' links
-@@ -1313,7 +1313,7 @@
+@@ -1312,7 +1312,7 @@
  # DESCRIPTION: AWStats DNS cache files are read/saved as native hash files. 
  # This increases DNS cache files loading speed, above all for very large web sites.
  #
@@ -80,7 +80,7 @@ Forwarded: not-needed
  
  
  # PLUGIN: UserInfo
-@@ -1426,7 +1426,7 @@
+@@ -1425,7 +1425,7 @@
  # table with country name
  # Replace spaces in the path of geoip data file with string "%20".
  #
@@ -89,7 +89,7 @@ Forwarded: not-needed
  
  # PLUGIN: GeoIP_City_Maxmind
  # REQUIRED MODULES: Geo::IP or Geo::IP::PurePerl (from Maxmind)
-@@ -1435,7 +1435,7 @@
+@@ -1434,7 +1434,7 @@
  # and hits by city including regions.
  # Replace spaces in the path of geoip data file with string "%20".
  #
@@ -98,7 +98,7 @@ Forwarded: not-needed
  
  # PLUGIN: GeoIP_ASN_Maxmind
  # REQUIRED MODULES: Geo::IP or Geo::IP::PurePerl (from Maxmind)
-@@ -1455,7 +1455,7 @@
+@@ -1454,7 +1454,7 @@
  # Canada can be detected.
  # Replace spaces in the path of geoip data file with string "%20".
  #
@@ -107,7 +107,7 @@ Forwarded: not-needed
  
  # PLUGIN: GeoIP_ISP_Maxmind
  # REQUIRED MODULES: Geo::IP or Geo::IP::PurePerl (from Maxmind)
-@@ -1463,7 +1463,7 @@
+@@ -1462,7 +1462,7 @@
  # DESCRIPTION: This plugin adds a chart of hits by ISP.
  # Replace spaces in the path of geoip data file with string "%20".
  #
@@ -116,7 +116,7 @@ Forwarded: not-needed
  
  # PLUGIN: GeoIP_Org_Maxmind
  # REQUIRED MODULES: Geo::IP or Geo::IP::PurePerl (from Maxmind)
-@@ -1471,7 +1471,7 @@
+@@ -1470,7 +1470,7 @@
  # DESCRIPTION: This plugin add a chart of hits by Organization name
  # Replace spaces in the path of geoip data file with string "%20".
  #
@@ -125,7 +125,7 @@ Forwarded: not-needed
  
  
  #-----------------------------------------------------------------------------
-@@ -1554,5 +1554,5 @@
+@@ -1553,5 +1553,5 @@
  # parameters that are lists of values.
  #
  

@@ -8,7 +8,7 @@ Bug-Debian: http://bugs.debian.org/284149
 
 --- a/wwwroot/cgi-bin/lib/browsers.pm
 +++ b/wwwroot/cgi-bin/lib/browsers.pm
-@@ -255,7 +255,8 @@
+@@ -254,7 +254,8 @@
  'POE\-Component\-Client\-HTTP',
  'mozilla',				# Must be at end because a lot of browsers contains mozilla in string
  'libwww',				# Must be at end because some browser have both 'browser id' and 'libwww'
@@ -18,7 +18,7 @@ Bug-Debian: http://bugs.debian.org/284149
  );
  
  # BrowsersHashIDLib
-@@ -483,7 +484,8 @@
+@@ -482,7 +483,8 @@
  'POE\-Component\-Client\-HTTP','HTTP user-agent for POE (portable networking framework for Perl)',
  'mozilla','Mozilla',
  'libwww','LibWWW',

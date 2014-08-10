@@ -8,7 +8,7 @@ Debian-Bug: http://bugs.debian.org/293218
 
 --- a/wwwroot/cgi-bin/awstats.pl
 +++ b/wwwroot/cgi-bin/awstats.pl
-@@ -17575,10 +17575,10 @@
+@@ -17583,10 +17583,10 @@
  	print "<frameset cols=\"$FRAMEWIDTH,*\">\n";
  	print "<frame name=\"mainleft\" src=\""
  	  . XMLEncode("$AWScript${NewLinkParams}framename=mainleft")

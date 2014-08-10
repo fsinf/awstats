@@ -20,7 +20,7 @@ Bug-Debian: http://bugs.debian.org/435028
  <br>#
 --- a/wwwroot/cgi-bin/awstats.model.conf
 +++ b/wwwroot/cgi-bin/awstats.model.conf
-@@ -44,7 +44,7 @@
+@@ -43,7 +43,7 @@
  # Example: "/var/log/access_log.%YYYY-0%MM-0%DD-0.log"
  # Example: "C:/WINNT/system32/LogFiles/W3SVC1/ex%YY-24%MM-24%DD-24.log"
  # You can also use a pipe if log file come from a pipe :
