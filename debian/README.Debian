@@ -10,6 +10,11 @@ Do the following for a simple setup of a single website with Apache:
     logfiles
   * Copy /usr/share/doc/awstats/examples/apache.conf to
     /etc/apache2/conf.d/awstats.conf
+  * Restrict access to Location /cgi-bin/awstats.pl with
+    password-based authentication or via host access control.  Please
+    read "Authentication, Authorization and Access Control" HOWTO on
+    the Apache docs website http://httpd.apache.org/docs/ to see
+    available opportunities.
 
 Optionaly edit /etc/default/awstats to disable nightly build of static
 html reports (placed in /var/cache/awstats/).
@@ -58,7 +63,7 @@ example, insert the following lines in /etc/logrotate.d/apache2:
 
     prerotate
       if [ -x /usr/share/awstats/tools/update.sh ]; then
-        su - -c /usr/share/awstats/tools/update.sh www-data
+        su -l -c /usr/share/awstats/tools/update.sh www-data
       fi
     endscript
 
@@ -98,17 +103,17 @@ should...
 
     To retain use of a common config file containing defaults for all
     of your sites, consider a scheme such as the following:
- 
+
     Make a bunch of awstats.[site_name_here].conf files, and have the
     first line include the parent awstats.conf file (which by default
     also includes awstats.conf.local).  The remainder of the file
     should have your site-specific configuration settings, which
     override the defaults specified in awstats.conf and
     awstats.conf.local.
- 
+
     Here is an example of an awstats.example.com.conf file (of course,
     tailor the file for your own configuration):
-    
+
         Include "/etc/awstats/awstats.conf"
         SiteDomain="example.com"
         HostAliases="example.com www.example.com"
@@ -148,3 +153,17 @@ Where is configure.pl?
 AWStats configure.pl script is not available as a CGI script on
 Debian.  Instead, it is located as awstats_configure.pl in
 /usr/share/doc/awstats/examples/.
+
+
+Cannot run configs outside of /etc/awstats/
+-------------------------------------------
+
+You can.  Please, use -configdir parameter for awstats.pl like this:
+
+  /usr/lib/cgi-bin/awstats.pl -configdir=/home/user/ \
+                              -config=example.com \
+                              ...
+
+If awstats.pl is used as CGI script, overwriting of configdir with a
+value that differs from a default value is only possible if the
+environment variable AWSTATS_ENABLE_CONFIG_DIR is defined.

@@ -1,0 +1,134 @@
+Author: Sergey B Kirpichev <skirpichev@gmail.com>
+Description: Debian-specific awstats config
+Forwarded: not-needed
+
+---
+ wwwroot/cgi-bin/awstats.model.conf |   28 ++++++++++++++--------------
+ 1 file changed, 14 insertions(+), 14 deletions(-)
+
+--- a/wwwroot/cgi-bin/awstats.model.conf
++++ b/wwwroot/cgi-bin/awstats.model.conf
+@@ -48,7 +48,7 @@
+ # If there are several log files from load balancing servers :
+ # Example: "/pathtotools/logresolvemerge.pl *.log |"
+ #
+-LogFile="/var/log/httpd/mylog.log"
++LogFile="/var/log/apache2/access.log"
+ 
+ 
+ # Enter the log file type you want to analyze.
+@@ -120,7 +120,7 @@
+ # Example for IIS:
+ # LogFormat = 2
+ #
+-LogFormat=1
++LogFormat=4
+ 
+ 
+ # If your log field's separator is not a space, you can change this parameter.
+@@ -166,7 +166,7 @@
+ # Note: You can also use @/mypath/myfile if list of aliases are in a file.
+ # Example: "www.myserver.com localhost 127.0.0.1 REGEX[mydomain\.(net|org)$]"
+ #
+-HostAliases="localhost 127.0.0.1 REGEX[myserver\.com$]"
++HostAliases="localhost 127.0.0.1"
+ 
+ 
+ # If you want to have hosts reported by name instead of ip address, AWStats
+@@ -186,7 +186,7 @@
+ # 2 - DNS Lookup is made only from static DNS cache file (if it exists)
+ # Default: 2
+ # 
+-DNSLookup=2
++DNSLookup=1
+ 
+ 
+ # When AWStats updates its statistics, it stores results of its analysis in 
+@@ -201,7 +201,7 @@
+ # Example: "C:/awstats_data_dir"
+ # Default: "."          (means same directory as awstats.pl)
+ #
+-DirData="."
++DirData="/var/lib/awstats"
+ 
+ 
+ # Relative or absolute web URL of your awstats cgi-bin directory.
+@@ -220,7 +220,7 @@
+ # Example: "../icon"
+ # Default: "/icon" (means you must copy icon directories in "/mywwwroot/icon")
+ #
+-DirIcons="/icon"
++DirIcons="/awstats-icon"
+ 
+ 
+ # When this parameter is set to 1, AWStats adds a button on report page to
+@@ -917,7 +917,7 @@
+ # Example: "/usr/share/awstats/lang"
+ # Default: "./lang" (means lang directory is in same location than awstats.pl)
+ #
+-DirLang="./lang"
++DirLang="/usr/share/awstats/lang"
+ 
+ 
+ # Show menu header with reports' links
+@@ -1313,7 +1313,7 @@
+ # DESCRIPTION: AWStats DNS cache files are read/saved as native hash files. 
+ # This increases DNS cache files loading speed, above all for very large web sites.
+ #
+-#LoadPlugin="hashfiles"
++LoadPlugin="hashfiles"
+ 
+ 
+ # PLUGIN: UserInfo
+@@ -1426,7 +1426,7 @@
+ # table with country name
+ # Replace spaces in the path of geoip data file with string "%20".
+ #
+-#LoadPlugin="geoip GEOIP_STANDARD /pathto/GeoIP.dat"
++#LoadPlugin="geoip GEOIP_STANDARD /usr/share/GeoIP/GeoIP.dat"
+ 
+ # PLUGIN: GeoIP_City_Maxmind
+ # REQUIRED MODULES: Geo::IP or Geo::IP::PurePerl (from Maxmind)
+@@ -1435,7 +1435,7 @@
+ # and hits by city including regions.
+ # Replace spaces in the path of geoip data file with string "%20".
+ #
+-#LoadPlugin="geoip_city_maxmind GEOIP_STANDARD /pathto/GeoIPCity.dat"
++#LoadPlugin="geoip_city_maxmind GEOIP_STANDARD /usr/share/GeoIP/GeoIPCity.dat"
+ 
+ # PLUGIN: GeoIP_ASN_Maxmind
+ # REQUIRED MODULES: Geo::IP or Geo::IP::PurePerl (from Maxmind)
+@@ -1455,7 +1455,7 @@
+ # Canada can be detected.
+ # Replace spaces in the path of geoip data file with string "%20".
+ #
+-#LoadPlugin="geoip_region_maxmind GEOIP_STANDARD /pathto/GeoIPRegion.dat"
++#LoadPlugin="geoip_region_maxmind GEOIP_STANDARD /usr/share/GeoIP/GeoIPRegion.dat"
+ 
+ # PLUGIN: GeoIP_ISP_Maxmind
+ # REQUIRED MODULES: Geo::IP or Geo::IP::PurePerl (from Maxmind)
+@@ -1463,7 +1463,7 @@
+ # DESCRIPTION: This plugin adds a chart of hits by ISP.
+ # Replace spaces in the path of geoip data file with string "%20".
+ #
+-#LoadPlugin="geoip_isp_maxmind GEOIP_STANDARD /pathto/GeoIPISP.dat"
++#LoadPlugin="geoip_isp_maxmind GEOIP_STANDARD /usr/share/GeoIP/GeoIPISP.dat"
+ 
+ # PLUGIN: GeoIP_Org_Maxmind
+ # REQUIRED MODULES: Geo::IP or Geo::IP::PurePerl (from Maxmind)
+@@ -1471,7 +1471,7 @@
+ # DESCRIPTION: This plugin add a chart of hits by Organization name
+ # Replace spaces in the path of geoip data file with string "%20".
+ #
+-#LoadPlugin="geoip_org_maxmind GEOIP_STANDARD /pathto/GeoIPOrg.dat"
++#LoadPlugin="geoip_org_maxmind GEOIP_STANDARD /usr/share/GeoIP/GeoIPOrg.dat"
+ 
+ 
+ #-----------------------------------------------------------------------------
+@@ -1554,5 +1554,5 @@
+ # parameters that are lists of values.
+ #
+ 
+-#Include ""
++Include "/etc/awstats/awstats.conf.local"
+ 

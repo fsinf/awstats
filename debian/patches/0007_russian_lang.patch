@@ -1,5 +1,10 @@
 Description: Updated Russian translation.
 Author: Sergey B Kirpichev <skirpichev@gmail.com>
+Forwarded: https://sourceforge.net/tracker/?func=detail&aid=3199735&group_id=13764&atid=113764
+
+---
+ wwwroot/cgi-bin/lang/awstats-ru.txt |   40 ++++++++++++++++++------------------
+ 1 file changed, 20 insertions(+), 20 deletions(-)
 
 --- a/wwwroot/cgi-bin/lang/awstats-ru.txt
 +++ b/wwwroot/cgi-bin/lang/awstats-ru.txt

@@ -4,9 +4,14 @@ Bug-Debian: http://bugs.debian.org/432096
 Bug-Debian: http://bugs.debian.org/440035
 Bug-Debian: http://bugs.debian.org/519319
 
+---
+ tools/awstats_buildstaticpages.pl |    2 +-
+ wwwroot/cgi-bin/awstats.pl        |    2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
 --- a/wwwroot/cgi-bin/awstats.pl
 +++ b/wwwroot/cgi-bin/awstats.pl
-@@ -1847,7 +1847,7 @@
+@@ -1867,7 +1867,7 @@
  					$includeFile = "$1$includeFile";
  				}
  			}
@@ -17,7 +22,7 @@ Bug-Debian: http://bugs.debian.org/519319
  				);
 --- a/tools/awstats_buildstaticpages.pl
 +++ b/tools/awstats_buildstaticpages.pl
-@@ -193,7 +193,7 @@
+@@ -192,7 +192,7 @@
  			    # Correct relative include files
  				if ($FileConfig =~ /^(.*[\\\/])[^\\\/]*$/) { $includeFile = "$1$includeFile"; }
  			}

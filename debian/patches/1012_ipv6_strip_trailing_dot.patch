@@ -2,6 +2,10 @@ Description: Strip the trailing dot when making a reverse on IPv6 addresses.
 Author: Laurent Bigonville <bigon@debian.org>
 Bug-Debian: http://bugs.debian.org/397544
 
+---
+ wwwroot/cgi-bin/plugins/ipv6.pm |    1 +
+ 1 file changed, 1 insertion(+)
+
 --- a/wwwroot/cgi-bin/plugins/ipv6.pm
 +++ b/wwwroot/cgi-bin/plugins/ipv6.pm
 @@ -64,6 +64,7 @@

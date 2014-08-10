@@ -1,6 +1,10 @@
 Description: Modify default path to awstats.pl in tools/.
 Author: Sergey B Kirpichev <skirpichev@gmail.com>
 
+---
+ tools/awstats_buildstaticpages.pl |    4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
 --- a/tools/awstats_buildstaticpages.pl
 +++ b/tools/awstats_buildstaticpages.pl
 @@ -308,8 +308,8 @@
