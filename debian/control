@@ -2,8 +2,8 @@ Source: awstats
 Section: web
 Priority: optional
 Maintainer: Mathias Ertl <mati@fsinf.at>
+Orig-Maintainer: Maintainer: Sergey B Kirpichev <skirpichev@gmail.com>
 Build-Depends: debhelper (>= 9), ant, default-jdk, sharutils
-Uploaders: Jonas Smedegaard <dr@jones.dk>, Sergey B Kirpichev <skirpichev@gmail.com>
 Vcs-Git: https://github.com/fsinf/awstats.git
 Vcs-Browser: https://github.com/fsinf/awstats
 Standards-Version: 3.9.4
