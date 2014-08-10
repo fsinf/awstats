@@ -24,12 +24,15 @@ AWSTATS_ENABLE_BUILDSTATICPAGES="yes"
 AWSTATS_LANG="en"
 [ ! -r "$DEFAULT" ] || . "$DEFAULT"
 
-[ "$AWSTATS_ENABLE_BUILDSTATICPAGES" = "yes" ] || exit 0
+# For compatibility: handle empty AWSTATS_ENABLE_CRONTABS as "yes":
+[ "${AWSTATS_ENABLE_CRONTABS:-yes}" = "yes" -a \
+  "$AWSTATS_ENABLE_BUILDSTATICPAGES" = "yes" ] || exit 0
 
 cd /etc/awstats
 
 for c in `/bin/ls -1 awstats.*.conf 2>/dev/null | \
-          /bin/sed 's/^awstats\.\(.*\)\.conf/\1/'` awstats
+          /bin/sed 's/^awstats\.\(.*\)\.conf/\1/'` \
+         `[ -f /etc/awstats/awstats.conf ] && echo awstats`
 do
   mkdir -p /var/cache/awstats/$c/$YEAR/$MONTH/
 
@@ -42,5 +45,8 @@ do
 	-dir=/var/cache/awstats/$c/$YEAR/$MONTH/ >$ERRFILE 2>&1
   then
     cat $ERRFILE >&2 # an error occurred
+  else
+    ln -fs /var/cache/awstats/$c/$YEAR/$MONTH/awstats.$c.$AWSTATS_LANG.html \
+        /var/cache/awstats/$c/$YEAR/$MONTH/index.$AWSTATS_LANG.html
   fi
 done

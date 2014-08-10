@@ -1,3 +1,5 @@
+MAILTO=root
+
 */10 * * * * www-data [ -x /usr/share/awstats/tools/update.sh ] && /usr/share/awstats/tools/update.sh
 
 # Generate static reports:

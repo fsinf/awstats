@@ -1,6 +1,10 @@
 debian/default/*		etc/default/
 debian/awstats.conf*		etc/awstats/
-docs/*				usr/share/doc/awstats/html/
+docs/*.html				usr/share/doc/awstats/html/
+docs/*.css              usr/share/doc/awstats/html/
+docs/images/            usr/share/doc/awstats/html/
+docs/scripts/            usr/share/doc/awstats/html/
+docs/*.xml               usr/share/doc/awstats/html/
 wwwroot/cgi-bin/awstats.pl	usr/lib/cgi-bin/
 wwwroot/cgi-bin/lang/*		usr/share/awstats/lang/
 wwwroot/cgi-bin/lib/*		usr/share/awstats/lib/

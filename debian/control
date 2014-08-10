@@ -2,24 +2,18 @@ Source: awstats
 Section: web
 Priority: optional
 Maintainer: Mathias Ertl <mati@fsinf.at>
+Build-Depends: debhelper (>= 9), ant, default-jdk, sharutils
 Uploaders: Jonas Smedegaard <dr@jones.dk>, Sergey B Kirpichev <skirpichev@gmail.com>
-Build-Depends: cdbs (>= 0.4.51~),
- devscripts (>= 2.10.7~),
- debhelper (>= 9),
- dh-buildinfo,
- ant,
- default-jdk,
- sharutils
 Vcs-Git: https://github.com/fsinf/awstats.git
 Vcs-Browser: https://github.com/fsinf/awstats
-Standards-Version: 3.8.5
+Standards-Version: 3.9.4
 Homepage: http://awstats.sourceforge.net/
 
 Package: awstats
 Architecture: all
-Depends: ${perl:Depends}, ${misc:Depends}, ${cdbs:Depends}
-Recommends: ${cdbs:Recommends}
-Suggests: ${cdbs:Suggests}
+Depends: ${perl:Depends}, ${misc:Depends}
+Recommends: libnet-xwhois-perl, coreutils (>= 7.4)
+Suggests: apache2 | httpd, libnet-dns-perl, libnet-ip-perl, libgeo-ipfree-perl, liburi-perl
 Description: powerful and featureful web server log analyzer
  Advanced Web Statistics (AWStats) is a powerful web server logfile
  analyzer written in perl that shows you all your web statistics including
